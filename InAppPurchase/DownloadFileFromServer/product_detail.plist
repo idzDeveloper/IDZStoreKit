@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Product_details</key>
+	<dict>
+		<key>Item 1</key>
+		<dict>
+			<key>host_content</key>
+			<true/>
+			<key>app_name</key>
+			<string>Product 1</string>
+			<key>hosted_content_version</key>
+			<string>0.0</string>
+			<key>product_identifier</key>
+			<string>com.YourCompanyName.productName.unlock1</string>
+			<key>download_url</key>
+			<string>Product url ie. www.yourcompany.com/data1.zip</string>
+		</dict>
+		<key>Item 2</key>
+		<dict>
+			<key>app_name</key>
+			<string>Product 2</string>
+			<key>host_content</key>
+			<true/>
+			<key>hosted_content_version</key>
+			<string>0.0</string>
+			<key>product_identifier</key>
+			<string>com.YourCompanyName.productName.unlock2</string>
+			<key>download_url</key>
+			<string>Product url ie. www.yourcompany.com/data2.zip</string>
+		</dict>
+		<key>Item 3</key>
+		<dict>
+			<key>app_name</key>
+			<string>Product 2</string>
+			<key>host_content</key>
+			<false/>
+			<key>hosted_content_version</key>
+			<string>0.0</string>
+			<key>product_identifier</key>
+			<string>com.YourCompanyName.productName.unlock3</string>
+			<key>download_url</key>
+			<string>no url as no content is present (see host_content is NO)</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
