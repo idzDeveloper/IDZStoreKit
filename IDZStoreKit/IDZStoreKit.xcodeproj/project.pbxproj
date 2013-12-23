@@ -26,6 +26,7 @@
 		1712E8531836150300E8F261 /* icon76.png in Resources */ = {isa = PBXBuildFile; fileRef = 1712E84B1836150300E8F261 /* icon76.png */; };
 		1712E8541836150300E8F261 /* icon76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1712E84C1836150300E8F261 /* icon76@2x.png */; };
 		1712E8551836150300E8F261 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1712E84D1836150300E8F261 /* icon@2x.png */; };
+		1716168618682E0C00D747FE /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1716168518682E0B00D747FE /* README.txt */; };
 		17C6C916181A3B8800CCC70B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C6C915181A3B8800CCC70B /* MobileCoreServices.framework */; };
 		17D58DD8185EE0040028D7FA /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D58DA8185EE0040028D7FA /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		17D58DD9185EE0040028D7FA /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D58DAA185EE0040028D7FA /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
@@ -93,6 +94,7 @@
 		1712E84B1836150300E8F261 /* icon76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon76.png; sourceTree = "<group>"; };
 		1712E84C1836150300E8F261 /* icon76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon76@2x.png"; sourceTree = "<group>"; };
 		1712E84D1836150300E8F261 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		1716168518682E0B00D747FE /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.txt; path = Resources/README.txt; sourceTree = "<group>"; };
 		17C6C915181A3B8800CCC70B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		17D58DA7185EE0040028D7FA /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		17D58DA8185EE0040028D7FA /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 		2F4912F517D8AFBD00533EC1 = {
 			isa = PBXGroup;
 			children = (
+				1716168518682E0B00D747FE /* README.txt */,
 				170317F31856D51600E7F2B2 /* Classes */,
 				2FF1A13917D9B00A00BDCAB3 /* Resources */,
 				2F49130317D8AFBD00533EC1 /* Frameworks */,
@@ -456,6 +459,7 @@
 				170318401856D51600E7F2B2 /* IDZViewController_iPhone.xib in Resources */,
 				2FF1A14B17D9B00A00BDCAB3 /* progress_border.png in Resources */,
 				2FF1A14C17D9B00A00BDCAB3 /* progress_border@2x.png in Resources */,
+				1716168618682E0C00D747FE /* README.txt in Resources */,
 				17D58DE6185EE0040028D7FA /* product_detail.plist in Resources */,
 				170318441856D51600E7F2B2 /* IDZStoreKit-Info.plist in Resources */,
 				2FF1A14D17D9B00A00BDCAB3 /* progress_border@2x~ipad.png in Resources */,
