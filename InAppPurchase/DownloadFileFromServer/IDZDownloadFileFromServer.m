@@ -107,7 +107,6 @@
             if (obj.status == kDownloadObjectStatusInProgress) {
                 downloading=YES;
             }
-            
         }
         
         if (!downloading) {
@@ -132,11 +131,9 @@
             [self removeLoadView];
             
             NSString *errormsg=[NSString stringWithFormat:@"%@",error];
-            
             [delegate showAlertBoxWithMsg:errormsg title:@"Error!!"];
+        
         }
-        
-        
         
     }];
     

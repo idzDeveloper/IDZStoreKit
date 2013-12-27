@@ -397,7 +397,6 @@
     [self processTransaction:transaction];
     
     
-	//[[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 }
 
 - (void)failedTransaction:(SKPaymentTransaction *)transaction {
@@ -412,8 +411,9 @@
     }
     
     //[self showAlertBoxWithMsg:transaction.error.localizedDescription title:[NSString stringWithFormat:@"Error ::%d",transaction.error.code ]];
-    
+    if (transaction.transactionState != SKPaymentTransactionStatePurchasing) {
 	[[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+     }
 }
 
 - (void)restoreTransaction:(SKPaymentTransaction *)transaction {
@@ -427,7 +427,9 @@
     else
     {
         [self showNetworkError];
+         if (transaction.transactionState != SKPaymentTransactionStatePurchasing) {
         [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+         }
     }
     
 }
@@ -477,7 +479,9 @@
             // unlock features
             isDownloading=NO;
             [self provideContentForProductIdentifier:pdIdentifier versionNo:@"1.0"];
+             if (transaction.transactionState != SKPaymentTransactionStatePurchasing) {
             [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+             }
           
         }
     }
@@ -518,7 +522,9 @@
                     isDownloading=NO;
 
                     [self provideContentForProductIdentifier:pdIdentifier versionNo:@"1.0"];
+                     if (transaction.transactionState != SKPaymentTransactionStatePurchasing) {
                     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+                     }
                     
                     
                 }
@@ -661,7 +667,9 @@
 # pragma mark - Implement SKPaymentTransactionObserver protocol
 -(void)paymentQueue:(SKPaymentQueue *)queue removedTransactions:(NSArray *)transactions{
 	for (SKPaymentTransaction *transaction in transactions){
-        [queue finishTransaction:transaction];
+        if (transaction.transactionState != SKPaymentTransactionStatePurchasing) {
+            [queue finishTransaction:transaction];
+        }
     }
 
 
@@ -702,8 +710,10 @@
             NSString *version =[NSString stringWithFormat:@"%@",download.contentVersion];
             
             [self provideContentForProductIdentifier:download.transaction.payment.productIdentifier versionNo:version];
-            
+
+            if (download.transaction.transactionState != SKPaymentTransactionStatePurchasing) {
             [queue finishTransaction:download.transaction];
+            }
             
         } else if (download.downloadState == SKDownloadStateActive) {
             
@@ -884,8 +894,9 @@
     NSString *version=[dictionary objectForKey:@"contentVersion"];
     
     [self provideContentForProductIdentifier:transaction.payment.productIdentifier versionNo:version];
+     if (transaction.transactionState != SKPaymentTransactionStatePurchasing) {
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
-    
+     }
     
     
     /////////////************** Set Path for Resources ****************///////////////
