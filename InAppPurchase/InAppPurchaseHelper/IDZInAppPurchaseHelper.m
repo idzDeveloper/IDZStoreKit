@@ -380,7 +380,7 @@
 
 
 - (void)buyProduct:(SKProduct *)product {
-	NSLog(@"Performing in-app purchase: %@", product.productIdentifier);
+	//NSLog(@"Performing in-app purchase: %@", product.productIdentifier);
 	
 	//add to payment queue
 	SKPayment *payment = [SKPayment paymentWithProduct:product];
@@ -410,7 +410,6 @@
         NSLog(@"SKErrorPaymentCancelled");
         
     }
-    
     
     //[self showAlertBoxWithMsg:transaction.error.localizedDescription title:[NSString stringWithFormat:@"Error ::%d",transaction.error.code ]];
     
@@ -442,8 +441,17 @@
         pdIdentifier=transaction.payment.productIdentifier;
     }
     else if (transaction.transactionState == SKPaymentTransactionStateRestored){
+       
         pdIdentifier=transaction.originalTransaction.payment.productIdentifier;
         
+        if (pdIdentifier == nil) {
+            pdIdentifier=transaction.payment.productIdentifier;
+        }
+    }
+    
+    if (pdIdentifier == nil) {
+        [self showAlertBoxWithMsg:@"Problem While fetching the products. You can try again by clicking restore or purchase button." title:@"Error"];
+        return;
     }
     
     
@@ -462,28 +470,6 @@
             isDownloading=YES;
             [[SKPaymentQueue defaultQueue] startDownloads:transaction.downloads];
 
-            /*for (SKDownload *download in transaction.downloads)
-            {
-               
-               for (int i=1; i<=[dictionary count]; i++)
-                {
-                    NSDictionary *dict_temp=[dictionary objectForKey:[NSString stringWithFormat:@"Item %d",i]];
-                    NSString *pd=[dict_temp objectForKey:@"product_identifier"];
-                    NSString *hs_version=[dict_temp objectForKey:@"hosted_content_version"];
-                    
-                    NSLog(@"download.contentVersion %@",download.contentVersion );
-                    if ([pd isEqualToString:download.transaction.payment.productIdentifier])
-                    {
-                        if (![hs_version isEqualToString:download.contentVersion])
-                        {
-                            NSLog(@"version download");
-                            [[SKPaymentQueue defaultQueue] startDownloads:transaction.downloads];
-                        }
-                    }
-                }
-            
-            }*/
-                
         }
         else
         {
@@ -515,8 +501,6 @@
                     
                     NSString *url=[dict_temp objectForKey:@"download_url"];
                     NSDictionary *dictionary=[[NSDictionary alloc] initWithObjects:[NSArray arrayWithObjects:url,pd,version,transaction, nil] forKeys:[NSArray arrayWithObjects:@"product_url",@"product_identifier",@"contentVersion",@"transaction", nil]];
-                    
-                    NSString *dir=[self downloadableContentPathForProductId:pdIdentifier];
                     
                     NSString *key=[NSString stringWithFormat:@"%@_downloaded",pdIdentifier];
                     BOOL downloaded = [[NSUserDefaults standardUserDefaults] boolForKey:key];
