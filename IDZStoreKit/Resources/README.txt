@@ -43,3 +43,7 @@ you can go through the demo project for any help or you can also contact me at i
 
 License:
 IDZStoreKit uses MIT Licensing And so all of source code can be used royalty-free into your app. Just make sure that you don’t remove the copyright notice from the source code if you make your app open source and in the about page.
+
+
+Credits:
+Thanks to Ray Wenderlich's tutorials as I have referred their site for making this tutorial.
