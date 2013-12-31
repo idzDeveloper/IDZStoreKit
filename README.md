@@ -44,6 +44,11 @@ you can go through the demo project for any help or you can also contact me at i
 7) For iOS 5 server side downloading you can add url of the product to product_detail.plist file.
 for customising iOS 5 downloading view go to DownloadFileFromServer class which handles downloading from server, unzipping the zip file and saving the path of downloaded folder.
 
-License
-
+ License
+=======
 IDZStoreKit uses MIT Licensing And so all of source code can be used royalty-free into your app. Just make sure that you don’t remove the copyright notice from the source code if you make your app open source and in the about page.
+
+
+ Credits:
+=======
+Thanks to Ray Wenderlich's tutorials as I have referred their site for making this project.
